@@ -1,0 +1,35 @@
+div.nav {
+    /* width: 100%; */
+    margin-top: 32px;
+}
+
+div.nav>a {
+    background-color: lightgray;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: gray;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 6px;
+    margin: 6px;
+    transition-duration: 0.4s;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+div.nav>a:hover {
+    background-color: darkgrey;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+table.nav>tr.wide>td>a {
+    width: calc(100%-170px);
+}
+
+tr.wide,
+tr.narrow {
+    user-select: none;
+}

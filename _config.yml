@@ -1,0 +1,4 @@
+deploy:
+  type: git
+  repository: git@github.com:UMSCJK6765/umscjk6765.github.io.git
+  branch: main
