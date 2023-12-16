@@ -1,0 +1,67 @@
+* {
+	user-select: none;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	text-align: center;
+}
+
+table#options,
+table#options th,
+table#options td {
+	font-size: 16px;
+	text-align: center;
+	border-collapse: collapse;
+	border: 1px solid #e5e5e5;
+}
+
+table#options tr:nth-child(even) {
+	background-color: #f3f3f3;
+}
+
+table#options tr:hover {
+	background-color: #e5e5e5;
+}
+
+table#options td {
+	height: 24px;
+	text-align: left;
+	line-height: 24px;
+	user-select: text;
+}
+
+table#options {
+	/* width: 320px; */
+	margin: auto;
+}
+
+table#options th {
+	height: 24px;
+	color: #FFFFFF;
+	line-height: 24px;
+	background-color: #58cc02;
+}
+
+#eng {
+	width: 200px;
+}
+
+/* 返回按钮 */
+#back {
+	width: 120px;
+	border: none;
+	height: 48px;
+	cursor: pointer;
+	font-size: 16px;
+	color: #FFFFFF;
+	line-height: 44px;
+	font-weight: bold;
+	border-radius: 14px;
+	background-color: #58cc02;
+	border-bottom: 4px solid #68b631;
+	/* 固定位置 */
+	right: 16px;
+	bottom: 16px;
+	position: fixed;
+}

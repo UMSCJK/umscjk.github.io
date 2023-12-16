@@ -1,0 +1,584 @@
+Why bother?
+What for?
+You got me there.
+You said it.
+何必麻烦？
+为什么？
+你难住我了。
+你说对了；我完全同意。
+
+Don't bother
+No hurry
+Go ahead
+No problem
+不用麻烦了
+不着急
+开始做；着手干
+没问题
+
+See you later
+I didn't know that
+Hold on, please
+I hope I didn't bother you
+null
+null
+null
+希望没打扰到你
+
+I didn't get it.
+You read my mind.
+You never know.
+It's up to you.
+我不明白。
+由你来决定。
+你永远不会知道。
+你猜透了我的想法。
+
+What's up
+What's for
+What are you up to
+So what
+出什么事了
+为什么
+你在忙什么
+那又怎么样
+
+No problem
+No hurry
+Come on
+That's OK
+没问题
+不忙
+加油
+没关系
+
+Don't mention it
+Go ahead
+Take it easy
+It couldn't be worse
+不客气
+前进，去吧
+放轻松一点
+情况不能再糟了
+
+So long
+Sounds great
+Good luck
+Have a good time
+再见
+听起来好极了
+好运
+过得愉快，玩的很开心
+
+Excuse me
+Sorry
+Sure
+No way
+对不起，打扰一下
+抱歉
+当然，的确
+决不，没门
+
+No way
+Go ahead
+You'd better not
+I think so
+没门；表示拒绝
+问吧，干吧，做吧；表示鼓励对方去做刚提到的事
+你最好不要；表示委婉的拒绝
+我想是这样的
+
+Good job
+Come on
+Go ahead
+Help yourself
+干得不错
+快点
+问吧；继续说
+请自便
+
+Are you all right
+Have you bought the book
+Can I help you
+Do you have a room
+你还好吗
+你买了那本书吗
+我可以帮你吗
+你有房间吗
+
+What time is it
+What's the date today
+How much is your watch
+Could you help me
+几点钟了
+今天几号
+你的手表多少钱
+你可以帮我吗
+
+That's all right
+Don't mention it
+You're welcome
+Oh, thanks
+不要紧
+别提了
+不客气
+谢谢
+
+It's nothing
+Be careful
+Go ahead
+No problem
+没事
+小心
+去吧
+没问题
+
+Congratulations
+That's great
+Well done
+Sorry to hear that
+祝贺
+那太棒了
+做得好
+很难过听到那个消息
+
+Enjoy yourself
+You're welcome
+That's interesting
+The same to you
+过得愉快
+不客气
+那很有趣
+你也一样
+
+have a good time!
+I'm happy to hear that.
+good luck!
+congratulations!
+玩得高兴！
+我很高兴听你这么说。
+祝你好运！
+祝贺你！
+
+Certainly not
+Enjoy yourself
+Don't trouble me
+Yes, please
+当然不
+玩得开心
+别麻烦我
+是的，请
+
+My pleasure
+Not exactly
+With pleasure
+No problem
+乐意效劳
+不完全是这样
+愉快地
+没问题
+
+Not at all.
+Of course not.
+You'd better not.
+Sure.
+一点也不。
+当然不。
+你最好不。
+当然。
+
+What do you want
+Are you ready to order
+What's the specialty here
+What would you like to drink",
+null
+null
+null
+null
+
+What are you doing
+What are you
+What's wrong
+How is it going
+你正在做什么
+你做什么工作的
+你怎么了
+最近还好吗
+
+it's nothing
+it's all right
+with pleasure
+my pleasure",
+null
+null
+好的，乐意效劳
+那是我应该做的
+
+Don't mention it
+Forget it
+Exactly
+I beg to differ
+没关系
+不必在意
+一点不错，完全正确
+恕我不能同意
+
+Don't mention it.
+What's up?
+I got it.
+Never mind.
+别客气。
+怎么了？
+我明白了。
+没关系。
+
+It's a pleasure
+Ask please
+Help yourself
+Go ahead
+乐意效劳
+请问
+别客气
+去吧，问吧
+
+Make yourself at home
+Take it easy
+Take your time
+Enjoy yourself
+别拘束
+别紧张
+慢慢来
+玩的愉快
+
+Take your time
+Take it easy
+Don't mention it
+Don't bother
+别着急；从容做
+别担心；放轻松
+不用介意
+不用麻烦了；不打扰了
+
+Good luck
+Cheer up
+Same to you
+Keep it up
+祝好运
+振作起来
+和你一样
+保持下去
+
+No wonder
+No offence
+No comment
+No doubt
+难怪
+无意冒犯
+无可奉告
+毫无疑问
+
+Not really
+Don't mention it
+It's up to you
+By all means
+不全是这样
+别客气
+你决定吧
+当然可以、一定
+
+What for
+Why not
+So what
+Why bother
+为什么
+为何不
+那又怎样
+何必费心
+
+You got me there
+I don't know
+As you wish
+I couldn't agree more
+你难住我了
+我不知道
+如你所愿
+我非常同意
+
+It doesn't matter
+I can't agree more
+I have no idea
+It's a pity
+没关系
+我完全同意
+我不知道
+真遗憾
+
+No way
+Go ahead
+Keep cool
+Never mind
+没门
+着手做某事，尽管去做
+保持冷静，有话好好说
+不必担心
+
+That's it
+Well done
+Cheers
+Nonsense
+就是这样
+干得好
+干杯
+胡说八道
+
+have been
+have gone
+had been
+had gone
+已经去过了（现在完成时态）
+已经去了还没回来（现在完成时态）
+已经去过了（过去完成时态）
+已经去了还没回来（过去完成时态）
+
+forget it
+my pleasure
+help yourself
+pardon me
+得了吧；算了吧；没关系
+不用谢
+随便
+对不起，再说一遍
+
+I'm not free
+We'd better not
+We'll be fine
+I'd love to
+我没空
+我们最好不
+我们很好
+我愿意
+
+So what
+Really
+Pardon
+What for
+那又如何
+真的吗
+能再重复一遍吗
+为了什么？
+
+You're crazy
+You're lucky
+You'd better not
+You never know
+你疯了
+你真幸运
+你最好不要
+你永远不会懂
+
+All of the hope was lost
+No hope was lost
+None of the hope was lost
+Some hope was lost, some not",
+null
+null
+null
+有些希望失去了，有些没有
+
+It's a piece of cake
+Don't be a wet blanket
+You have green fingers
+I'm all ears
+小菜一碟
+别扫兴
+你是园艺高手
+我洗耳恭听
+
+Don't worry about it
+It's my share
+None of your business
+It's up to you",
+null
+我该付一份
+不关你的事
+由你负责
+
+Excuse me
+Sorry
+Sure
+No way
+对不起，打扰一下
+抱歉
+当然，的确
+决不，没门
+
+it was boring
+it was pleasant
+it was terrible
+it was expensive
+它是令人厌烦的
+它是令人愉快的
+它是令人可怕的
+它是昂贵的
+
+What would you like
+What is it over there
+What day is it today
+What's the matter with you
+你想要什么
+那边是什么
+今天星期几
+你怎么了
+
+Never mind
+No problem
+Have a good trip
+It's my pleasure
+没有关系
+没问题
+祝你们旅途愉快
+别客气
+
+I'm not free
+We'd better not
+We'll be fine
+I'd love to
+我没空
+我们最好不
+我们很好
+我愿意
+
+Do as you like
+Go for it
+Enjoy yourself
+Good luck
+随你便
+去争取
+玩得愉快
+祝好运
+
+I'm fine
+Never mind
+You're welcome
+The same to you
+我很好
+没关系
+不客气
+你也一样
+
+No problem.
+Are you serious?
+Cool!
+That's so easy.
+没问题。
+你说真的吗？
+酷！
+太容易了。
+
+What's up
+So what
+Are you sure
+What's your opinion
+怎么了
+那又怎样
+你确定吗
+你怎么说
+
+You are not alone
+It's hard to say
+I'm afraid not
+It's up to you
+你不是一个人
+这很难说
+恐怕不是这样的
+这取决于你
+
+I can't stand it
+I'm in no hurry
+That's a great idea
+It's not my cup of tea
+我受不了了
+我不着急
+是个好主意
+我对此事不感兴趣
+
+It's a deal
+You bet
+It is up to you
+Of course not
+一言为定
+当然
+取决于你
+当然不
+
+Forget it
+Cheer up
+Neither do I
+What a pity
+算了吧
+振作起来
+我也不
+真可惜
+
+Help yourself.
+No problem.
+It's a deal.
+It's up to you.
+随意。
+没问题。
+就这样定了。
+由你定。
+
+It depends.
+That's OK.
+Never mind.
+It doesn't matter.
+看情况而定
+好的
+没关系
+没关系
+
+You are welcome
+That's a good idea
+Don't worry
+You are so nice
+别客气
+好主意
+别担心
+你真好
+
+What's the date today
+How much is your watch
+What time is it now
+How many watches do you have
+今天几号
+你的表多少钱
+现在什么时间
+你有多少块手表
+
+I'm sorry
+I'd love to
+That's all right
+Come on
+对不起
+我愿意
+不要紧，没关系
+加油；快点
+
+it's great
+it's possible
+it's terrible
+it's ordinary
+极好的
+可能的
+可怕的
+普通的
+
+It just depends
+It's my pleasure
+Not in the least
+Thank you all the same
+看情况
+别客气
+一点也不
+还是谢谢你了

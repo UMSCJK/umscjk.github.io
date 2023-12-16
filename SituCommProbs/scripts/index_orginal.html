@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>情景交际在线练习</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			text-align: center;
+		}
+
+		h1 {
+			padding: 8px;
+		}
+
+		#cha,
+		#bnk,
+		#oas {
+			display: block;
+			font-size: 24px;
+			color: #FFFFFF;
+			transition: 0.2s;
+			/* border: 1px solid black; */
+			font-weight: bold;
+			text-align: center;
+			text-decoration: none;
+			/* background-color: crimson; */
+		}
+
+		#cha:hover,
+		#bnk:hover,
+		#oas:hover {
+			/* background-color: brown; */
+			box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.2), 0 16px 48px 0 rgba(0, 0, 0, 0.2);
+		}
+
+		#bnk,
+		#oas {
+			height: 158px;
+			width: 158px;
+			line-height: 158px;
+		}
+
+		#cha {
+			height: 320px;
+			width: 158px;
+			line-height: 320px;
+			border-radius: 16px 0 0 16px;
+			background-color: #DA3A2C;
+		}
+
+		#bnk {
+			border-radius: 0 16px 0 0;
+			background-color: #91BB31;
+		}
+
+		#oas {
+			border-radius: 0 0 16px 0;
+			background-color: #423930;
+		}
+
+		#left,
+		#right {
+			float: left;
+		}
+
+		#left {
+			padding-right: 4px;
+		}
+
+		#btns {
+			width: 320px;
+			height: 320px;
+			margin: auto;
+		}
+
+		#up {
+			padding-bottom: 4px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>情景交际在线练习</h1>
+	<div id="btns">
+		<div id="left">
+			<a id="cha" href="challenge/index.html">十题挑战</a>
+		</div>
+		<div id="right">
+			<div id="up">
+				<a id="bnk" href="bank/index.html">题库浏览</a>
+			</div>
+			<div id="dn">
+				<a id="oas" href="options/index.html">选项答案</a>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

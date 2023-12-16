@@ -1,0 +1,42 @@
+/* Adapted from Mozilla
+https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/details */
+details {
+	border-radius: 4px;
+	margin-bottom: 4px;
+	padding: 0.5em 0.5em 0;
+	border: 1px solid #aaa;
+}
+
+summary {
+	padding: 0.5em;
+	font-weight: bold;
+	margin: -0.5em -0.5em 0;
+}
+
+details[open] {
+	padding: 0.5em;
+}
+
+details[open]>summary {
+	margin-bottom: 0.5em;
+	border-bottom: 1px solid #aaa;
+}
+
+/* 返回按钮 */
+#back {
+	width: 120px;
+	border: none;
+	height: 48px;
+	cursor: pointer;
+	font-size: 16px;
+	color: #FFFFFF;
+	line-height: 44px;
+	font-weight: bold;
+	border-radius: 14px;
+	background-color: #58cc02;
+	border-bottom: 4px solid #68b631;
+	/* 固定位置 */
+	right: 16px;
+	bottom: 16px;
+	position: fixed;
+}
