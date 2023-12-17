@@ -357,7 +357,7 @@ var data = [
 			{
 				"asw": "A",
 				"eng": [
-					"–I am going back to America for Chriengas.",
+					"–I am going back to America for Christmas.",
 					"–________. And we will miss you.",
 					"Enjoy yourself",
 					"You're welcome",

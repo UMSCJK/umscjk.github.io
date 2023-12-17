@@ -1,6 +1,16 @@
+* {
+	user-select: none;
+}
+
+p.stem,
+li {
+	user-select: text;
+}
+
 /* Adapted from Mozilla
 https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/details */
 details {
+	width: 160px;
 	border-radius: 4px;
 	margin-bottom: 4px;
 	padding: 0.5em 0.5em 0;
@@ -8,6 +18,7 @@ details {
 }
 
 summary {
+	width: 160px;
 	padding: 0.5em;
 	cursor: pointer;
 	font-weight: bold;
@@ -15,10 +26,12 @@ summary {
 }
 
 details[open] {
+	width: auto;
 	padding: 0.5em;
 }
 
 details[open]>summary {
+	width: auto;
 	margin-bottom: 0.5em;
 	border-bottom: 1px solid #aaa;
 }

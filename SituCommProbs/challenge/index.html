@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="../scripts/github-mark.svg" type="image/x-icon">
+	<link rel="shortcut icon" href="../scripts/favicon.jpg" type="image/x-icon">
 	<link rel="stylesheet" href="style.css">
 	<script src="../scripts/data.js"></script>
 </head>
@@ -165,19 +165,21 @@
 		};
 
 		function debug() {
-			userAns = ['A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E'];// debug专用
+			userAns = ['A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E'];
 			info();
 		};
 		// debug();
 
 		// 定义info函数显示错题列表
 		function info() {
-			alert('作答完毕，点击确定或关闭查看结果')
+			alert('作答完毕，点击确定或关闭查看结果');
 			// 删除所有元素
-			document.getElementById("header").remove();
-			document.getElementById("question").remove();
-			document.getElementById("options").remove();
-			document.getElementById("continue").remove();
+			if (document.getElementById("header")) {
+				document.getElementById("header").remove();
+				document.getElementById("question").remove();
+				document.getElementById("options").remove();
+				document.getElementById("continue").remove();
+			};
 			for (var i = 0; i < totalQueNum; i++) {
 				correctAns.push(queList[i][2]);
 			};
@@ -250,6 +252,5 @@
 		}
 	</script>
 </body>
-<!-- TODO: 左上角返回按钮 -->
 
 </html>
