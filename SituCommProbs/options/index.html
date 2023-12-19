@@ -11,22 +11,19 @@
 </head>
 
 <body>
+	<h1>情景交际选项汇总</h1>
+	<table id="options">
+		<thead>
+			<tr>
+				<th id="eng">原文</th>
+				<th>翻译</th>
+			</tr>
+		</thead>
+		<tbody id="tbody">
+		</tbody>
+	</table>
+	<button id="back" onclick="window.location.href='../index.html'">返回主页</button>
 	<script>
-		var initialHTML = `
-		<h1>情景交际选项汇总</h1>
-		<table id="options">
-			<thead>
-				<tr>
-					<th id="eng">原文</th>
-					<th>翻译</th>
-				</tr>
-			</thead>
-			<tbody id="tbody">
-			</tbody>
-		</table>
-		<button id="back" onclick="window.location.href='../index.html'">返回主页</button>
-		`;
-		document.body.innerHTML = initialHTML;
 		var writeTable = '';
 		for (var i = 0; i < list.length; i++) {
 			writeTable += '<tr><td>'

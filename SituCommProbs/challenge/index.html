@@ -38,19 +38,31 @@
 			<span id="textE" class="text">(I don't know)</span>
 		</div>
 	</div>
-	<button id="continue" disabled>CONTINUE</button>
+	<button id="continue" onclick="forward()" disabled>CONTINUE</button>
 	<script>
-		// 原style.js
-		// 创建监听器
+		totalQueNum = 10, userSelect = '', queList = [], currentQueNum = 0, wrongQues = [], userAns = [], correctAns = [], result = [], ansCard = [], correctQueNum = 0, queSource = [];
+		document.title = totalQueNum + ' Questions Challenge'; // 按照totalQueNum修改title	
 		document.getElementById("optnA").addEventListener("click", function () { sel(0) });
 		document.getElementById("optnB").addEventListener("click", function () { sel(1) });
 		document.getElementById("optnC").addEventListener("click", function () { sel(2) });
 		document.getElementById("optnD").addEventListener("click", function () { sel(3) });
 		document.getElementById("optnE").addEventListener("click", function () { sel(4) });
-		// 初始化变量
-		var userSelect = '';
-		// 定义clsRpls (Class Replace) 函数，以便在sel函数中用较少的代码量实现给HTML元素增减class的功能。此为专用函数，无法用于其他位置
+		for (var i = 0; i < totalQueNum; i++) { // 随机生成题组
+			// 定义临时数组
+			var tempQue = [];
+			// 随机卷号题号
+			var paperNum = Math.floor(Math.random() * 13);
+			var queNum = Math.floor(Math.random() * 5);
+			var queAns = data[paperNum].pbls[queNum].asw;
+			// 卷号题号答案推到临时数组
+			tempQue.push(paperNum, queNum, queAns);
+			// 临时数组推到全局题组
+			queList.push(tempQue);
+			// 顺便初始化userAns = ['' * 10]
+			userAns.push('');
+		};
 		function clsAdd(idO, idP, idQ, idR) {
+			// 定义clsRpls (Class Replace) 函数，以便在sel函数中用较少的代码量实现给HTML元素增减class的功能。此为专用函数，无法用于其他位置
 			var eleO = document.getElementById(idO);
 			var eleP = document.getElementById(idP);
 			var eleQ = document.getElementById(idQ);
@@ -64,7 +76,6 @@
 			eleQ.classList.add("unseled");
 			eleR.classList.add("unseled");
 		};
-		// 定义单选函数
 		function sel(opt) {
 			if (opt == 0) {
 				clsAdd("optnB", "optnC", "optnD", "optnE"); // 为id为optnB、optnC、optnD、optnE的元素移除seled类名、添加unseled类名；给id为optnA的元素添加seled类名
@@ -95,34 +106,6 @@
 			document.getElementById("continue").disabled = false;
 			// console.log(userSelect);
 		};
-
-
-
-		// 原script.js
-		// 初始变量部分，目前包括：空题组、当前题目、当前题目答案、错题列表、答题状态
-		totalQueNum = 10, queList = [], currentQueNum = 0, wrongQues = [], userAns = [], correctAns = [], result = [], ansCard = [], correctQueNum = 0, queSource = [];
-		// 修改title
-		document.title = totalQueNum + ' Questions Challenge';
-		// 随机生成题组
-		for (var i = 0; i < totalQueNum; i++) {
-			// 定义临时数组
-			var tempQue = [];
-			// 随机卷号题号
-			var paperNum = Math.floor(Math.random() * 13);
-			var queNum = Math.floor(Math.random() * 5);
-			var queAns = data[paperNum].pbls[queNum].asw;
-			// 卷号题号答案推到临时数组
-			tempQue.push(paperNum, queNum, queAns);
-			// 临时数组推到全局题组
-			queList.push(tempQue);
-		};
-		// console.table(queList);
-		/* 结果：生成一坨JSON，大致如此：
-		queList = [
-			[卷号, 题号, '答案']
-			// 共重复totalQueNum次
-		]
-		*/
 		function setQue() {
 			// 初始化答题界面
 			document.getElementById("question").innerHTML = '<span class="emsp">&emsp;</span>'
@@ -134,17 +117,23 @@
 			document.getElementById("textC").innerHTML = data[queList[currentQueNum][0]].pbls[queList[currentQueNum][1]].eng[4];
 			document.getElementById("textD").innerHTML = data[queList[currentQueNum][0]].pbls[queList[currentQueNum][1]].eng[5];
 			document.getElementById("continue").disabled = true;
-			// console.log('currentQueNum: ' + currentQueNum);
-		};
-		setQue();
-		// 为继续按钮添加监听器
-		document.getElementById("continue").addEventListener("click", function () { ctnfn() });
-		// 定义继续函数 (continue function)，用于跳转至下一题
-		function ctnfn() {
-			currentQueNum += 1;
-			// alert('currentQueNum (下一题题号): ' + currentQueNum + '\n用户选择: ' + userSelect);
 			document.getElementById("prog-bar").style.width = (currentQueNum * 10 / totalQueNum * 10).toFixed() + '%';
 			document.getElementById("prog-bar").innerHTML = (currentQueNum * 10 / totalQueNum * 10).toFixed() + '%';
+			// console.log('currentQueNum: ' + currentQueNum);
+			if (userAns[currentQueNum] == 'A') {
+				sel(0)
+			} else if (userAns[currentQueNum] == 'B') {
+				sel(1)
+			} else if (userAns[currentQueNum] == 'C') {
+				sel(2)
+			} else if (userAns[currentQueNum] == 'D') {
+				sel(3)
+			} else if (userAns[currentQueNum] == 'E') {
+				sel(4)
+			};
+		};
+		function changeQue() {
+			// alert('currentQueNum (下一题题号): ' + currentQueNum + '\n用户选择: ' + userSelect);
 			document.getElementById("optnA").classList.remove("seled");
 			document.getElementById("optnB").classList.remove("seled");
 			document.getElementById("optnC").classList.remove("seled");
@@ -156,21 +145,37 @@
 			document.getElementById("optnD").classList.add("unseled");
 			document.getElementById("optnE").classList.add("unseled");
 			// 存储用户选择为数组，判断对错
-			userAns.push(userSelect);
+			userAns[currentQueNum - 1] = userSelect;
 			userSelect = '';
 			if (currentQueNum == totalQueNum) {
 				info();
 			};
 			setQue(); // 刷新题目
 		};
-
+		function forward() {
+			currentQueNum += 1;
+			changeQue();
+		};
+		function backward() {
+			currentQueNum -= 1;
+			changeQue();
+		};
 		function debug() {
-			userAns = ['A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E'];
+			// userAns = ['A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E'];
+			for (var i = 0; i < totalQueNum; i++) {
+				var rdm = Math.floor(Math.random() * 4)
+				if (rdm == 0) {
+					userAns[i] = 'A';
+				} else if (rdm == 1) {
+					userAns[i] = 'B';
+				} else if (rdm == 2) {
+					userAns[i] = 'C';
+				} else if (rdm == 3) {
+					userAns[i] = 'D';
+				};
+			};
 			info();
 		};
-		// debug();
-
-		// 定义info函数显示错题列表
 		function info() {
 			alert('作答完毕，点击确定或关闭查看结果');
 			// 删除所有元素
@@ -186,18 +191,15 @@
 			ansCard.push(correctAns, userAns);
 			for (var i = 0; i < totalQueNum; i++) {
 				if (ansCard[0][i] == ansCard[1][i]) {
-					result.push(true);
+					result[i] = true;
 					correctQueNum++;
 				} else {
-					result.push(false);
+					result[i] = false;
 				};
 				queSource.push([queList[i][0], queList[i][1]]);
 			};
 			ansCard.push(result, queSource, correctQueNum);
 			console.log(ansCard);
-			showResult();
-		};
-		function showResult() {
 			// 写入初始HTML
 			var initialHTML = `
 			<h1 id="resultTitle">结果统计</h1>
@@ -250,6 +252,7 @@
 			};
 			document.getElementById("tbody").innerHTML = writeTable;
 		}
+		setQue();
 	</script>
 </body>
 
