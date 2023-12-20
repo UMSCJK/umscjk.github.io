@@ -12,7 +12,7 @@ for (var i = 0; i < totalQueNum; i++) {
 	var queAns = data[paperNum].pbls[queNum].asw;
 	tempQue.push(paperNum, queNum, queAns);
 	queList.push(tempQue);
-	userAns.push('');// 顺便初始化userAns
+	userAns.push('');
 };
 function sel(opt) {
 	function clsAdd(idO, idP, idQ, idR) {
@@ -148,12 +148,39 @@ function info() {
 	};
 	ansCard.push(result, queSource, correctQueNum);
 	console.log(ansCard);
-	document.body.innerHTML = `<h1 id="resultTitle">结果统计</h1><h2 id="percentage">正确率：</h2><table id="result"><thead><tr><th style="width: 40px;">题号</th><th style="width: 40px;">答案</th><th style="width: 40px;">作答</th><th style="width: 112px;">来源试卷</th><th style="width: 56px;">原题号</th></tr></thead><tbody id="tbody"></tbody></table><div id="buttons"><button id="back" onclick="window.location.href='../index.html'">返回主页</button><button id="bank" onclick="window.location.href='../bank/index.html'">查看题库</button><button id="opts" onclick="window.location.href='../options/index.html'">选项解析</button></div><button id="reload" onclick="location.reload()">再做一次</button>`;
-	document.getElementById("percentage").innerHTML += (ansCard[4] * 10 / totalQueNum * 10).toFixed(1) + '%'; // 百分数形式
-	// document.getElementById("percentage").innerHTML += ansCard[4] + '/' + totalQueNum; // 分数形式
+	document.body.innerHTML = `<h1 id="resultTitle">结果统计</h1>
+	<h2 id="percentage">正确率：</h2>
+	<table id="result">
+		<thead>
+			<tr>
+				<th style="width: 40px;">题号</th>
+				<th style="width: 40px;">答案</th>
+				<th style="width: 40px;">作答</th>
+				<th style="width: 112px;">来源试卷</th>
+				<th style="width: 56px;">原题号</th>
+			</tr>
+		</thead>
+		<tbody id="tbody"></tbody>
+	</table>
+	<div id="buttons">
+		<button id="back" onclick="window.location.href='../index.html'">返回主页</button>
+		<button id="bank" onclick="window.location.href='../bank/index.html'">查看题库</button>
+		<button id="opts" onclick="window.location.href='../options/index.html'">选项解析</button>
+	</div>
+	<button id="reload" onclick="location.reload()">再做一次</button>`;
+	document.getElementById("percentage").innerHTML += (ansCard[4] * 10 / totalQueNum * 10).toFixed(1) + '%';
 	var writeTable = '';
 	for (var i = 0; i < totalQueNum; i++) {
-		writeTable += '<tr><td>' + (i + 1) + '</td><td>' + ansCard[0][i] + '</td><td>' + ansCard[1][i] + '</td><td>' + data[ansCard[3][i][0]].paperTitle + '</td><td>' + (ansCard[3][i][1] + 1) + '</td></tr>';
+		writeTable += '<tr><td>'
+			+ (i + 1) + '</td><td>'
+			+ ansCard[0][i]
+			+ '</td><td>'
+			+ ansCard[1][i]
+			+ '</td><td>'
+			+ data[ansCard[3][i][0]].paperTitle
+			+ '</td><td>'
+			+ (ansCard[3][i][1] + 1)
+			+ '</td></tr>';
 	};
 	document.getElementById("tbody").innerHTML = writeTable;
 };
