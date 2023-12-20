@@ -1,11 +1,11 @@
 * {
+	-webkit-user-select: none;
 	user-select: none;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
 	margin: 0;
-	/* border: 1px solid #4b4b4b; */
 	padding: 32px 16px 16px 16px;
 }
 
@@ -18,6 +18,7 @@ div#header {
 	font-size: 24px;
 	color: #4b4b4b;
 	text-align: left;
+	-webkit-user-select: text;
 	user-select: text;
 }
 
@@ -101,7 +102,16 @@ button {
 	border-radius: 14px;
 	background-color: #58cc02;
 	border-bottom: 4px solid #68b631;
-	/* 固定位置 */
+}
+
+button#backward {
+	left: 16px;
+	bottom: 16px;
+	position: fixed;
+}
+
+button#continue,
+button#reload {
 	right: 16px;
 	bottom: 16px;
 	position: fixed;
@@ -135,15 +145,26 @@ button:disabled {
 	border-bottom: 4px solid #84d8ff;
 }
 
-/* 页面宽度小于等于600px时 */
-@media (max-width: 600px) {
+/* 页面宽度小于400px时（一般用不到） */
+@media (max-width: 399px) {
+	#options div {
+		width: auto;
+	}
+
+	#question {
+		font-size: 20px;
+	}
+}
+
+/* 页面宽度小于600px时 */
+@media (max-width: 599px) {
 	#prog-container {
 		width: 90%;
 	}
 }
 
-/* 页面宽度大于600px时 */
-@media (min-width: 601px) {
+/* 页面宽度大于等于600px时 */
+@media (min-width: 600px) {
 	#prog-container {
 		width: 512px;
 	}
@@ -213,5 +234,6 @@ button#back,
 button#bank,
 button#opts {
 	width: 96px;
+	margin: 2px;
 	position: static;
 }

@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="../scripts/favicon.jpg" type="image/x-icon">
+	<title>10 Questions Challenge</title>
 	<link rel="stylesheet" href="style.css">
 	<script src="../scripts/data.js"></script>
 </head>
@@ -15,245 +16,33 @@
 			<div id="prog-bar"></div>
 		</div>
 	</div>
-	<h1 id="question">–This is the first line of the quesion stem.<br />–And this is the ________ line.</h1>
+	<h1 id="question">–There is a ________ that causes the content to not be displayed properly.<br />
+		–Maybe the page is being debugged, don't worry.</h1>
 	<div id="options">
 		<div id="optnA" class="unseled">
 			<span class="optn">A</span>
-			<span id="textA" class="text">First</span>
+			<span id="textA" class="text">beetle</span>
 		</div>
-		<div id="optnB" class="unseled">
+		<div id="optnB" class="seled">
 			<span class="optn">B</span>
-			<span id="textB" class="text">Second</span>
+			<span id="textB" class="text">bug</span>
 		</div>
 		<div id="optnC" class="unseled">
 			<span class="optn">C</span>
-			<span id="textC" class="text">Third</span>
+			<span id="textC" class="text">hole</span>
 		</div>
 		<div id="optnD" class="unseled">
 			<span class="optn">D</span>
-			<span id="textD" class="text">Forth</span>
+			<span id="textD" class="text">insect</span>
 		</div>
 		<div id="optnE" class="unseled">
 			<span class="optn">E</span>
 			<span id="textE" class="text">(I don't know)</span>
 		</div>
 	</div>
+	<button id="backward" onclick="backward()" disabled>BACK</button>
 	<button id="continue" onclick="forward()" disabled>CONTINUE</button>
-	<script>
-		totalQueNum = 10, userSelect = '', queList = [], currentQueNum = 0, wrongQues = [], userAns = [], correctAns = [], result = [], ansCard = [], correctQueNum = 0, queSource = [];
-		document.title = totalQueNum + ' Questions Challenge'; // 按照totalQueNum修改title	
-		document.getElementById("optnA").addEventListener("click", function () { sel(0) });
-		document.getElementById("optnB").addEventListener("click", function () { sel(1) });
-		document.getElementById("optnC").addEventListener("click", function () { sel(2) });
-		document.getElementById("optnD").addEventListener("click", function () { sel(3) });
-		document.getElementById("optnE").addEventListener("click", function () { sel(4) });
-		for (var i = 0; i < totalQueNum; i++) { // 随机生成题组
-			// 定义临时数组
-			var tempQue = [];
-			// 随机卷号题号
-			var paperNum = Math.floor(Math.random() * 13);
-			var queNum = Math.floor(Math.random() * 5);
-			var queAns = data[paperNum].pbls[queNum].asw;
-			// 卷号题号答案推到临时数组
-			tempQue.push(paperNum, queNum, queAns);
-			// 临时数组推到全局题组
-			queList.push(tempQue);
-			// 顺便初始化userAns = ['' * 10]
-			userAns.push('');
-		};
-		function clsAdd(idO, idP, idQ, idR) {
-			// 定义clsRpls (Class Replace) 函数，以便在sel函数中用较少的代码量实现给HTML元素增减class的功能。此为专用函数，无法用于其他位置
-			var eleO = document.getElementById(idO);
-			var eleP = document.getElementById(idP);
-			var eleQ = document.getElementById(idQ);
-			var eleR = document.getElementById(idR);
-			eleO.classList.remove("seled");
-			eleP.classList.remove("seled");
-			eleQ.classList.remove("seled");
-			eleR.classList.remove("seled");
-			eleO.classList.add("unseled");
-			eleP.classList.add("unseled");
-			eleQ.classList.add("unseled");
-			eleR.classList.add("unseled");
-		};
-		function sel(opt) {
-			if (opt == 0) {
-				clsAdd("optnB", "optnC", "optnD", "optnE"); // 为id为optnB、optnC、optnD、optnE的元素移除seled类名、添加unseled类名；给id为optnA的元素添加seled类名
-				document.getElementById("optnA").classList.add("seled"); // 为id为optnA的元素添加seled类名
-				document.getElementById("optnA").classList.remove("unseled"); // 为id为optnA的元素移除unseled类名
-				userSelect = 'A'; // 用户当前选项全局变量改为'A'
-			} else if (opt == 1) {
-				clsAdd("optnA", "optnC", "optnD", "optnE"); // 为id为optnA、optnC、optnD、optnE的元素移除seled类名、添加unseled类名；给id为optnB的元素添加seled类名
-				document.getElementById("optnB").classList.add("seled"); // 为id为optnB的元素添加seled类名
-				document.getElementById("optnB").classList.remove("unseled"); // 为id为optnB的元素移除unseled类名
-				userSelect = 'B'; // 用户当前选项全局变量改为'B'
-			} else if (opt == 2) {
-				clsAdd("optnA", "optnB", "optnD", "optnE"); // 为id为optnA、optnB、optnD、optnE的元素移除seled类名、添加unseled类名；给id为optnC的元素添加seled类名
-				document.getElementById("optnC").classList.add("seled"); // 为id为optnC的元素添加seled类名
-				document.getElementById("optnC").classList.remove("unseled"); // 为id为optnC的元素移除unseled类名
-				userSelect = 'C'; // 用户当前选项全局变量改为'C'
-			} else if (opt == 3) {
-				clsAdd("optnA", "optnB", "optnC", "optnE"); // 为id为optnA、optnB、optnC、optnE的元素移除seled类名、添加unseled类名；给id为optnD的元素添加seled类名
-				document.getElementById("optnD").classList.add("seled"); // 为id为optnD的元素添加seled类名
-				document.getElementById("optnD").classList.remove("unseled"); // 为id为optnD的元素移除unseled类名
-				userSelect = 'D'; // 用户当前选项全局变量改为'D'
-			} else if (opt == 4) {
-				clsAdd("optnA", "optnB", "optnC", "optnD"); // 为id为optnA、optnB、optnC、optnD的元素移除seled类名、添加unseled类名；给id为optnE的元素添加seled类名
-				document.getElementById("optnE").classList.add("seled"); // 为id为optnE的元素添加seled类名
-				document.getElementById("optnE").classList.remove("unseled"); // 为id为optnE的元素移除unseled类名
-				userSelect = 'E'; // 用户当前选项全局变量改为'E'
-			};
-			document.getElementById("continue").disabled = false;
-			// console.log(userSelect);
-		};
-		function setQue() {
-			// 初始化答题界面
-			document.getElementById("question").innerHTML = '<span class="emsp">&emsp;</span>'
-				+ data[queList[currentQueNum][0]].pbls[queList[currentQueNum][1]].eng[0]
-				+ '<br /><span class="emsp">&emsp;</span>'
-				+ data[queList[currentQueNum][0]].pbls[queList[currentQueNum][1]].eng[1];
-			document.getElementById("textA").innerHTML = data[queList[currentQueNum][0]].pbls[queList[currentQueNum][1]].eng[2];
-			document.getElementById("textB").innerHTML = data[queList[currentQueNum][0]].pbls[queList[currentQueNum][1]].eng[3];
-			document.getElementById("textC").innerHTML = data[queList[currentQueNum][0]].pbls[queList[currentQueNum][1]].eng[4];
-			document.getElementById("textD").innerHTML = data[queList[currentQueNum][0]].pbls[queList[currentQueNum][1]].eng[5];
-			document.getElementById("continue").disabled = true;
-			document.getElementById("prog-bar").style.width = (currentQueNum * 10 / totalQueNum * 10).toFixed() + '%';
-			document.getElementById("prog-bar").innerHTML = (currentQueNum * 10 / totalQueNum * 10).toFixed() + '%';
-			// console.log('currentQueNum: ' + currentQueNum);
-			if (userAns[currentQueNum] == 'A') {
-				sel(0)
-			} else if (userAns[currentQueNum] == 'B') {
-				sel(1)
-			} else if (userAns[currentQueNum] == 'C') {
-				sel(2)
-			} else if (userAns[currentQueNum] == 'D') {
-				sel(3)
-			} else if (userAns[currentQueNum] == 'E') {
-				sel(4)
-			};
-		};
-		function changeQue() {
-			// alert('currentQueNum (下一题题号): ' + currentQueNum + '\n用户选择: ' + userSelect);
-			document.getElementById("optnA").classList.remove("seled");
-			document.getElementById("optnB").classList.remove("seled");
-			document.getElementById("optnC").classList.remove("seled");
-			document.getElementById("optnD").classList.remove("seled");
-			document.getElementById("optnE").classList.remove("seled");
-			document.getElementById("optnA").classList.add("unseled");
-			document.getElementById("optnB").classList.add("unseled");
-			document.getElementById("optnC").classList.add("unseled");
-			document.getElementById("optnD").classList.add("unseled");
-			document.getElementById("optnE").classList.add("unseled");
-			// 存储用户选择为数组，判断对错
-			userAns[currentQueNum - 1] = userSelect;
-			userSelect = '';
-			if (currentQueNum == totalQueNum) {
-				info();
-			};
-			setQue(); // 刷新题目
-		};
-		function forward() {
-			currentQueNum += 1;
-			changeQue();
-		};
-		function backward() {
-			currentQueNum -= 1;
-			changeQue();
-		};
-		function debug() {
-			// userAns = ['A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E'];
-			for (var i = 0; i < totalQueNum; i++) {
-				var rdm = Math.floor(Math.random() * 4)
-				if (rdm == 0) {
-					userAns[i] = 'A';
-				} else if (rdm == 1) {
-					userAns[i] = 'B';
-				} else if (rdm == 2) {
-					userAns[i] = 'C';
-				} else if (rdm == 3) {
-					userAns[i] = 'D';
-				};
-			};
-			info();
-		};
-		function info() {
-			alert('作答完毕，点击确定或关闭查看结果');
-			// 删除所有元素
-			if (document.getElementById("header")) {
-				document.getElementById("header").remove();
-				document.getElementById("question").remove();
-				document.getElementById("options").remove();
-				document.getElementById("continue").remove();
-			};
-			for (var i = 0; i < totalQueNum; i++) {
-				correctAns.push(queList[i][2]);
-			};
-			ansCard.push(correctAns, userAns);
-			for (var i = 0; i < totalQueNum; i++) {
-				if (ansCard[0][i] == ansCard[1][i]) {
-					result[i] = true;
-					correctQueNum++;
-				} else {
-					result[i] = false;
-				};
-				queSource.push([queList[i][0], queList[i][1]]);
-			};
-			ansCard.push(result, queSource, correctQueNum);
-			console.log(ansCard);
-			// 写入初始HTML
-			var initialHTML = `
-			<h1 id="resultTitle">结果统计</h1>
-			<h2 id="percentage">正确率：</h2>
-			<table id="result">
-				<thead>
-					<tr>
-						<th style="width: 40px;">题号</th>
-						<th style="width: 40px;">答案</th>
-						<th style="width: 40px;">作答</th>
-						<th style="width: 112px;">来源试卷</th>
-						<th style="width: 56px;">原题号</th>
-					</tr>
-				</thead>
-				<tbody id="tbody"></tbody>
-			</table>
-				<div id="buttons">
-					<button id="back" onclick="window.location.href='../index.html'">返回主页</button>
-					<button id="bank" onclick="window.location.href='../bank/index.html'">查看题库</button>
-					<button id="opts" onclick="window.location.href='../options/index.html'">选项解析</button>
-				</div>
-				<button id="reload" onclick="location.reload()">再做一次</button>
-			`;
-			document.body.innerHTML = initialHTML;
-			// 模拟生成答题卡
-			/* var ansCard = [
-				['D', 'A', 'D', 'B', 'A', 'C', 'C', 'B', 'C', 'B'],
-				['C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C'],
-				[false, false, false, false, false, true, true, false, true, false],
-				[[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [1, 0], [1, 1], [1, 2], [1, 3], [1, 4]],
-				3
-			]; */
-			// 百分比计算及显示
-			document.getElementById("percentage").innerHTML += (ansCard[4] * 10 / totalQueNum * 10).toFixed(1) + '%'; // 百分数形式
-			// document.getElementById("percentage").innerHTML += ansCard[4] + '/' + totalQueNum; // 分数形式
-			// 表格生成部分
-			var writeTable = '';
-			for (var i = 0; i < totalQueNum; i++) {
-				writeTable += '<tr><td>'
-					+ (i + 1)
-					+ '</td><td>'
-					+ ansCard[0][i]
-					+ '</td><td>'
-					+ ansCard[1][i]
-					+ '</td><td>'
-					+ data[ansCard[3][i][0]].paperTitle
-					+ '</td><td>'
-					+ (ansCard[3][i][1] + 1)
-					+ '</td></tr>';
-			};
-			document.getElementById("tbody").innerHTML = writeTable;
-		}
-		setQue();
-	</script>
+	<script src="script.js"></script>
 </body>
 
 </html>
